@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "COVID-19 Active Cases (10 Oct 2020)",
-  "width": 800,
+  "title": "COVID-19 Confirmed Cases (30 Jan 2020)",
+  "width": 900,
   "height": 400,
   "data": {
     "url": "js/ne_110m_admin_0_countries.topojson",
@@ -21,6 +21,20 @@
       }  
     },
     {
+      "data": {
+        "url": "js/Oceans.topojson",
+        "format": {"type": "topojson", "feature": "oceans"}
+      },
+      "mark": {"type": "geoshape", "fill": "skyblue"}
+    },
+    {
+      "data": {
+        "url": "js/WorldMapWithGraticules.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+    },
+    {
       "transform": [
         {
           "lookup": "properties.NAME",
@@ -29,24 +43,24 @@
               "url": "data/country_wise_latest.csv"
             },
             "key": "Country/Region",
-            "fields": ["Active"]
+            "fields": ["Confirmed"]
           }
         }
       ],
       "mark": {"type": "geoshape", "stroke": "white"},
       "encoding": {
         "color": {
-          "field": "Active",  
+          "field": "Confirmed",  
           "type": "quantitative",
           "scale": {
-            "type": "threshold",
-            "domain": [100000, 200000,  300000, 400000, 500000],
-            "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
-          }
+            "domain": [0, 5000000],
+            "scheme":"reds"
+          },
+          "legend": { "format": ".2s", "title": "Confirmed" }
         },
        "tooltip": [
        {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-       {"field": "Active", "type": "quantitative"}
+       {"field": "Confirmed", "type": "quantitative"}
         ]
       }
     }
