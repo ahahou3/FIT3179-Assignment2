@@ -51,9 +51,8 @@
       "encoding": {
         "color": {
           "field": "Confirmed",  
-          "type": "quantitative",
           "scale": {
-            "domain": [0, 5000000],
+            "type": "linear",
             "scheme":"reds"
           },
           "legend": { "format": ".2s", "title": "Confirmed" }

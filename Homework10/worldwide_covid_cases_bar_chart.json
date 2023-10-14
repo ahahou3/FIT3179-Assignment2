@@ -24,17 +24,25 @@
           "x": {
             "timeUnit": "yearmonth",
             "field": "Date",
-            "type": "ordinal"
+            "type": "ordinal",
+            "title":"Date(month-year)"
           },
           "y": {
             "aggregate": "sum",
             "field": {
               "repeat": "repeat"
-            }
+            },
+            "type": "quantitative"
           },
           "color": {
             "field": "WHO Region"
-          }
+          },
+          "tooltip": [
+            {
+              "field": "WHO Region",
+              "type": "nominal"
+            }
+          ]
         }
       },
       {
