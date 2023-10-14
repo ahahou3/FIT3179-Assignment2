@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "data/day_wise.csv"
+    },
+    "width": "container",
+    "height": 60,
+    "mark": "line",
+    "title": "Use this line chart to filter out the data based on time",
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit":"monthdate"
+        },
+        "y":{
+            "field":"Confirmed",
+            "type": "quantitative"
+        }
+    }
+}

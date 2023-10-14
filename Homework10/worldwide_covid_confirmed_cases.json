@@ -110,7 +110,8 @@
           },
           {
             "field": "Confirmed",
-            "type": "quantitative"
+            "type": "quantitative",
+            "format":","
           }
         ]
       }

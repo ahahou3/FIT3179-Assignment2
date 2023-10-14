@@ -167,6 +167,11 @@
             "field": "Recovered",
             "type": "quantitative",
             "format": ","
+          },
+          {
+            "field": "Population",
+            "type": "quantitative",
+            "format": ","
           }
         ]
       }
@@ -217,6 +222,11 @@
           },
           {
             "field": "Recovered",
+            "type": "quantitative",
+            "format": ","
+          },
+          {
+            "field": "Population",
             "type": "quantitative",
             "format": ","
           }

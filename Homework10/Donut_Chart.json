@@ -1,0 +1,73 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "repeat": [
+        "Confirmed",
+        "Deaths",
+        "Recovered",
+        "Active"
+    ],
+    "columns": 2,
+    "spec": {
+        "width": 200,
+        "height": 150,
+        "layer": [
+            {
+
+                "data": {
+                    "url": "data/full_grouped.csv"
+                },
+                "mark": {
+                    "type": "arc",
+                    "innerRadius": 25
+                },
+                "encoding": {
+                    "theta": {
+                        "aggregate": "sum",
+                        "field": {
+                            "repeat": "repeat"
+                        },
+                        "type": "quantitative"
+                    },
+                    "color": {
+                        "field": "WHO Region",
+                        "type": "nominal"
+                    },
+                    "tooltip": [
+                        {
+                            "field": "WHO Region",
+                            "type": "nominal"
+                        }
+                    ]
+                }
+            },
+            {
+                "data": {
+                  "values": [
+                    {
+                      "Confirmed": "Confirmed",
+                      "Deaths": "Deaths",
+                      "Recovered": "Recovered",
+                      "Active": "Active"
+                    }
+                  ]
+                },
+                "mark": {
+                  "type": "text",
+                  "align":"center",
+                  "baseline": "bottom",
+                  "fontSize":12,
+                  "x":100,
+                  "y":-20
+
+                },
+                "encoding": {
+                  "text": {
+                    "field": {
+                      "repeat": "repeat"
+                    }
+                  }
+                }
+              }
+        ]
+    }
+}
