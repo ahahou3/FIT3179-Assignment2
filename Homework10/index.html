@@ -72,17 +72,17 @@
   <script type="text/javascript">
 
     var spec1 = "worldwide_covid_confirmed_cases.json";
-    vegaEmbed('#spec1', spec1).then(function (result) {
+    vegaEmbed('#spec1', spec1, {"actions": false}).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
     var spec2 = "worldwide_covid_cases_bar_chart.json";
-    vegaEmbed('#spec2', spec2).then(function (result) {
+    vegaEmbed('#spec2', spec2, {"actions": false}).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
-    var spec3 = "scatter_plot_interactive.vg.json";
-    vegaEmbed('#spec3', spec3).then(function (result) {
+    var spec3 = "scatter_plot_interactive.json";
+    vegaEmbed('#spec3', spec3, {"actions": false}).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
   </script>

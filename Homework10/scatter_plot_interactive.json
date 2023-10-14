@@ -55,7 +55,7 @@
       "filter": "datum.Population > Population_Above"
     },
     {
-      "filter": "WHORegion_selection == null || datum.WHO Region == WHORegion_selection"
+      "filter": "WHORegion_selection == null || datum.WHORegion == WHORegion_selection"
     }
   ],
   "encoding": {
@@ -119,7 +119,7 @@
           }
         },
         "color": {
-          "field": "WHO Region",
+          "field": "WHORegion",
           "type": "nominal",
           "scale": {
             "domain": [
@@ -131,12 +131,12 @@
               "Western Pacific"
             ],
             "range": [
-              "#e41a1c",
-              "#984ea3",
-              "#ff7f00",
-              "#a6cee3",
-              "#377eb8",
-              "#a65628"
+              "#FF0000",
+              "#0000FF",
+              "#00FF00",
+              "#FFFF00",
+              "#800080",
+              "#FFA500"
             ]
           }
         },
@@ -190,7 +190,7 @@
         },
         "opacity": {
           "condition": {
-            "test": "datum['Country/Region'] == 'China' || datum['Country/Region'] == 'Singapore' || datum['Country/Region'] == 'Australia' || datum['Country/Region'] == 'New Zealand' || datum['Country'] == 'Italy' || datum['Country'] == 'Yemen' ||  datum['Country'] == 'United States'",
+            "test": "datum['Country/Region'] == 'China' || datum['Country/Region'] == 'India' || datum['Country/Region'] == 'Australia' || datum['Country/Region'] == 'New Zealand' || datum['Country'] == 'Italy' || datum['Country'] == 'Yemen' ||  datum['Country'] == 'United States of America'",
             "value": 1
           },
           "value": 0
