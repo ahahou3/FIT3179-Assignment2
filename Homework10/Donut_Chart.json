@@ -12,7 +12,6 @@
         "height": 150,
         "layer": [
             {
-
                 "data": {
                     "url": "data/full_grouped.csv"
                 },
@@ -36,38 +35,45 @@
                         {
                             "field": "WHO Region",
                             "type": "nominal"
+                        },
+                        {
+                            "aggregate": "sum",
+                            "field": {
+                                "repeat": "repeat"
+                            },
+                            "title": "Number",
+                            "format": ","
                         }
                     ]
                 }
             },
             {
                 "data": {
-                  "values": [
-                    {
-                      "Confirmed": "Confirmed",
-                      "Deaths": "Deaths",
-                      "Recovered": "Recovered",
-                      "Active": "Active"
-                    }
-                  ]
+                    "values": [
+                        {
+                            "Confirmed": "Confirmed",
+                            "Deaths": "Deaths",
+                            "Recovered": "Recovered",
+                            "Active": "Active"
+                        }
+                    ]
                 },
                 "mark": {
-                  "type": "text",
-                  "align":"center",
-                  "baseline": "bottom",
-                  "fontSize":12,
-                  "x":100,
-                  "y":-20
-
+                    "type": "text",
+                    "align": "center",
+                    "baseline": "bottom",
+                    "fontSize": 12,
+                    "x": 100,
+                    "y": -20
                 },
                 "encoding": {
-                  "text": {
-                    "field": {
-                      "repeat": "repeat"
+                    "text": {
+                        "field": {
+                            "repeat": "repeat"
+                        }
                     }
-                  }
                 }
-              }
+            }
         ]
     }
 }

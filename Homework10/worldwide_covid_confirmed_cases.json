@@ -111,7 +111,8 @@
           {
             "field": "Confirmed",
             "type": "quantitative",
-            "format":","
+            "format":",",
+            "title":"Confirmed Cases"
           }
         ]
       }

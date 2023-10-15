@@ -3,19 +3,144 @@
     "data": {
         "url": "data/day_wise.csv"
     },
-    "width": "container",
-    "height": 60,
-    "mark": "line",
-    "title": "Use this line chart to filter out the data based on time",
-    "encoding": {
-        "x": {
-            "field": "Date",
-            "type": "temporal",
-            "timeUnit":"monthdate"
+    "width": 1000,
+    "height": 200,
+    "layer": [
+        {
+            "mark": {
+                "type": "line",
+                "strokeWidth": 6,
+                "strokeOpacity":0.7
+            },
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal",
+                    "timeUnit": "monthdate"
+                },
+                "y": {
+                    "field": "Deaths",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "value": "black"
+                },
+                "tooltip": [
+                    {
+                        "field": "Date",
+                        "type": "temporal",
+                        "timeUnit": "yearmonthdate",
+                        "title": "Date"
+                    },
+                    {
+                        "field": "Deaths",
+                        "type": "quantitative",
+                        "format": ",",
+                        "title":"Death Cases"
+                    }
+                ]
+            }
         },
-        "y":{
-            "field":"Confirmed",
-            "type": "quantitative"
+        {
+            "mark": {
+                "type": "line",
+                "strokeWidth": 6,
+                "strokeOpacity":0.7
+            },
+            "title": "Different Cases Varies by time",
+            "transform": [
+                {
+                    "calculate": "datum.Confirmed/10",
+                    "as": "ConfirmedCasePer10"
+                }
+            ],
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal",
+                    "timeUnit": "monthdate",
+                    "axis": {
+                        "grid": false
+                    }
+                },
+                "y": {
+                    "field": "ConfirmedCasePer10",
+                    "type": "quantitative"
+                },
+                "tooltip": [
+                    {
+                        "field": "Date",
+                        "type": "temporal",
+                        "timeUnit": "yearmonthdate",
+                        "title": "Date"
+                    },
+                    {
+                        "field": "ConfirmedCasePer10",
+                        "type": "quantitative",
+                        "format": ",",
+                        "title":"Confirmed Cases(per 10)"
+                    },
+                    {
+                        "field": "Noofcountries",
+                        "type": "quantitative",
+                        "title": "No. of Countries Report"
+                    }
+                ],
+                "color": {
+                    "value": "Red"
+                }
+                
+            }
+        },
+        {
+            "mark": {
+                "type": "line",
+                "strokeWidth": 6,
+                "strokeOpacity":0.7
+            },
+            "transform": [
+                {
+                    "calculate": "datum.Recovered/10",
+                    "as": "RecoveredCasePer10"
+                }
+            ],
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal",
+                    "timeUnit": "monthdate"
+                },
+                "y": {
+                    "field": "RecoveredCasePer10",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "value": "green"
+                },
+                "tooltip": [
+                    {
+                        "field": "Date",
+                        "type": "temporal",
+                        "timeUnit": "yearmonthdate",
+                        "title": "Date"
+                    },
+                    {
+                        "field": "Recovered",
+                        "type": "quantitative",
+                        "format": ","
+                    },
+                    {
+                        "field": "RecoveredCasePer10",
+                        "type": "quantitative",
+                        "format": ",",
+                        "title":"Recovered Cases(per 10)"
+                    }
+                ]
+            }
         }
+        
+    ],
+    "config": {
+        "axisY": {"title":null}
     }
 }
