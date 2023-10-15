@@ -8,7 +8,7 @@
     ],
     "columns": 2,
     "spec": {
-        "width": 200,
+        "width": 150,
         "height": 150,
         "layer": [
             {
@@ -60,9 +60,9 @@
                 },
                 "mark": {
                     "type": "text",
-                    "align": "center",
+                    "align": "right",
                     "baseline": "bottom",
-                    "fontSize": 12,
+                    "fontSize": 13,
                     "x": 100,
                     "y": -20
                 },

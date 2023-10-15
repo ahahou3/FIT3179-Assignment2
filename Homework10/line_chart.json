@@ -3,7 +3,7 @@
     "data": {
         "url": "data/day_wise.csv"
     },
-    "width": 1000,
+    "width": 800,
     "height": 200,
     "layer": [
         {
@@ -47,7 +47,7 @@
                 "strokeWidth": 6,
                 "strokeOpacity":0.7
             },
-            "title": "Different Cases Varies by time",
+            "title": "Confirmed, Recovered, and Fatalities Over Time",
             "transform": [
                 {
                     "calculate": "datum.Confirmed/10",
